@@ -132,7 +132,7 @@ func (bc BarChart) Render(rp RendererProvider, w io.Writer) error {
 
 	bc.drawTitle(r)
 	for _, a := range bc.Elements {
-		a(r, canvasBox, bc.styleDefaultsElements())
+		a(r, canvasBox, bc.styleDefaultsElements(), nil, yr)
 	}
 
 	return r.Save(w)

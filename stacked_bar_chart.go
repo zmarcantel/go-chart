@@ -118,7 +118,7 @@ func (sbc StackedBarChart) Render(rp RendererProvider, w io.Writer) error {
 
 	sbc.drawTitle(r)
 	for _, a := range sbc.Elements {
-		a(r, canvasBox, sbc.styleDefaultsElements())
+		a(r, canvasBox, sbc.styleDefaultsElements(), nil, nil)
 	}
 
 	return r.Save(w)

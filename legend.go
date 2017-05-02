@@ -4,7 +4,7 @@ import "github.com/wcharczuk/go-chart/drawing"
 
 // Legend returns a legend renderable function.
 func Legend(c *Chart, userDefaults ...Style) Renderable {
-	return func(r Renderer, cb Box, chartDefaults Style) {
+	return func(r Renderer, cb Box, chartDefaults Style, xrange Range, yrange Range) {
 		legendDefaults := Style{
 			FillColor:   drawing.ColorWhite,
 			FontColor:   DefaultTextColor,
@@ -118,7 +118,7 @@ func Legend(c *Chart, userDefaults ...Style) Renderable {
 
 // LegendThin is a legend that doesn't obscure the chart area.
 func LegendThin(c *Chart, userDefaults ...Style) Renderable {
-	return func(r Renderer, cb Box, chartDefaults Style) {
+	return func(r Renderer, cb Box, chartDefaults Style, xrange Range, yrange Range) {
 		legendDefaults := Style{
 			FillColor:   drawing.ColorWhite,
 			FontColor:   DefaultTextColor,
@@ -216,7 +216,7 @@ func LegendThin(c *Chart, userDefaults ...Style) Renderable {
 
 // LegendLeft is a legend that is designed for longer series lists.
 func LegendLeft(c *Chart, userDefaults ...Style) Renderable {
-	return func(r Renderer, cb Box, chartDefaults Style) {
+	return func(r Renderer, cb Box, chartDefaults Style, xrange Range, yrange Range) {
 		legendDefaults := Style{
 			FillColor:   drawing.ColorWhite,
 			FontColor:   DefaultTextColor,

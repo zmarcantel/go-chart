@@ -98,7 +98,7 @@ func (pc PieChart) Render(rp RendererProvider, w io.Writer) error {
 	pc.drawSlices(r, canvasBox, finalValues)
 	pc.drawTitle(r)
 	for _, a := range pc.Elements {
-		a(r, canvasBox, pc.styleDefaultsElements())
+		a(r, canvasBox, pc.styleDefaultsElements(), nil, nil)
 	}
 
 	return r.Save(w)
